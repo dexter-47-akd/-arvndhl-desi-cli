@@ -51,7 +51,7 @@ help_info() {
       -d, --download        Download instead of playing
       -D, --delete          Delete history
       -l, --language        Language filter (hindi/marathi/tamil/telugu/malayalam/kannada/bengali/punjabi)
-      -p, --provider        Source (youtube/zee5(browser)/url)
+      -p, --provider        Source (youtube/zee5/url) — ZEE5 opens in browser (DRM)
       -q, --quality         Specify quality (720p, 1080p, best, worst)
       -v, --vlc             Use VLC instead of mpv
       -s, --syncplay        Use Syncplay to watch with friends
@@ -70,14 +70,21 @@ help_info() {
       --exit-after-play     Exit after playing (non-interactive)
       --debug               Print debug information
 
+    Providers:
+      youtube               Search and play from YouTube (default)
+      zee5                  Search ZEE5 via Mojeek, plays in your browser (DRM-protected)
+      url                   Direct URL passthrough for any yt-dlp supported site
+
     Examples:
       %s sholay
       %s -l marathi duniyadari
+      %s -p zee5 sholay
+      %s -p zee5 taqdeer
       %s --url https://einthusan.tv/movie/watch/example/
       %s -l hindi -e 1 sacred games
       %s -d -q 1080p RRR
       %s --continue
-    \n" "${0##*/}" "${0##*/}" "${0##*/}" "${0##*/}" "${0##*/}" "${0##*/}" "${0##*/}" "${0##*/}"
+    \n" "${0##*/}" "${0##*/}" "${0##*/}" "${0##*/}" "${0##*/}" "${0##*/}" "${0##*/}" "${0##*/}" "${0##*/}" "${0##*/}" "${0##*/}" "${0##*/}"
     exit 0
 }
 
