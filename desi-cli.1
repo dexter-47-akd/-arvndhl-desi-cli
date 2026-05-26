@@ -26,7 +26,7 @@ Language filter. Supported values: all, hindi, marathi, tamil, telugu,
 malayalam, kannada, bengali, punjabi.
 .TP
 .BR \-p ", " \-\-provider " <provider>"
-Source provider. Supported: youtube, url.
+Source provider. Supported: youtube, zee5, url. ZEE5 opens in your browser (DRM-protected).
 .TP
 .BR \-q ", " \-\-quality " <quality>"
 Specify quality (720p, 1080p, best, worst).
@@ -50,7 +50,7 @@ Episode range (e.g., 1\-10).
 Season number (default: 1).
 .TP
 .BR \-\-url " <URL>"
-Direct URL (YouTube, Einthusan, or any yt\-dlp\-supported site).
+Direct URL (YouTube, ZEE5, MX Player, Einthusan, or any yt\-dlp\-supported site).
 .TP
 .BR \-\-cookies\-file " <file>"
 Path to a cookies.txt file for YouTube authentication.
@@ -82,6 +82,9 @@ Print debug information.
 .TP
 Search and play a movie:
 desi\-cli sholay
+.TP
+Search with ZEE5 provider (opens in browser):
+desi\-cli \-p zee5 sholay
 .TP
 Search with language filter:
 desi\-cli \-l marathi duniyadari
@@ -136,6 +139,10 @@ Git branch for updates (default: master).
 YouTube extraction may require authentication for some content.
 If extraction fails, export cookies from your browser using the
 "Get cookies.txt" extension and pass them with \-\-cookies-file.
+
+ZEE5 content uses Widevine DRM and cannot be played in terminal
+media players. The ZEE5 provider opens the content in your default
+web browser for playback.
 .SH DEPENDENCIES
 yt\-dlp, fzf (or rofi/dmenu), mpv (or vlc/iina/syncplay),
 curl, sed, grep, awk.
@@ -146,6 +153,7 @@ Watch history file.
 .RE
 .SH AUTHORS
 Inspired by ani\-cli (https://github.com/pystardust/ani\-cli).
+See also: https://github.com/dexter\-47\-akd/\-arvndhl\-desi\-cli
 .SH LICENSE
 GNU General Public License v3.0 or later.
 .SH SEE ALSO

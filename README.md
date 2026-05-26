@@ -8,7 +8,7 @@ Heavily inspired by [ani-cli](https://github.com/pystardust/ani-cli).
 
 - Search & play Indian movies/series from the terminal
 - Language filter (Hindi, Marathi, Tamil, Telugu, Malayalam, Kannada, Bengali, Punjabi)
-- Multiple providers: YouTube (official channels) + Einthusan
+- Multiple providers: YouTube, ZEE5 (opens in browser, DRM-protected), URL passthrough
 - Movie & TV series support with episode selection
 - Quality selection (best, 1080p, 720p, 480p, worst)
 - Download videos
@@ -36,14 +36,14 @@ Heavily inspired by [ani-cli](https://github.com/pystardust/ani-cli).
 
 ### Linux / macOS
 ```bash
-git clone https://github.com/arvndhl/desi-cli.git
+git clone https://github.com/dexter-47-akd/-arvndhl-desi-cli.git
 cd desi-cli
 sudo cp desi-cli /usr/local/bin/
 ```
 
 ### Windows (Git Bash)
 ```bash
-git clone https://github.com/arvndhl/desi-cli.git
+git clone https://github.com/dexter-47-akd/-arvndhl-desi-cli.git
 cd desi-cli
 cp desi-cli /usr/bin/
 ```
@@ -51,8 +51,8 @@ cp desi-cli /usr/bin/
 ### Android (Termux)
 ```bash
 pkg install curl sed grep fzf yt-dlp mpv
-git clone https://github.com/arvndhl/desi-cli.git
-cp desi-cli/desi-cli $PREFIX/bin/
+git clone https://github.com/dexter-47-akd/-arvndhl-desi-cli.git
+cp desi-cli $PREFIX/bin/
 ```
 
 ## Usage
@@ -66,7 +66,7 @@ desi-cli [options] [query]
 |------|-------------|
 | `-h` | Show help |
 | `-l <lang>` | Language filter: hindi, marathi, tamil, telugu, etc. |
-| `-p <provider>` | Provider: youtube, einthusan, auto |
+| `-p <provider>` | Provider: youtube, zee5 (browser), url |
 | `-q <quality>` | Quality: best, 1080p, 720p, 480p, worst |
 | `-d` | Download instead of play |
 | `-c` | Continue watching from history |
@@ -92,8 +92,8 @@ desi-cli sholay
 # Search Marathi movie
 desi-cli -l marathi duniyadari
 
-# Search Tamil movie with Einthusan provider
-desi-cli -p einthusan -l tamil
+# Search ZEE5 (opens in browser)
+desi-cli -p zee5 sholay
 
 # Watch a TV series episode
 desi-cli -l hindi -e 1 sacred games
@@ -122,11 +122,14 @@ desi-cli -c
 
 ## Providers
 
-### YouTube
+### YouTube (default)
 Uses yt-dlp to search and extract videos from YouTube. Covers official channels like Rajshri, Shemaroo, Goldmines, Ultra Bollywood, etc.
 
-### Einthusan
-Searches Einthusan.tv (South Asian cinema archive) and uses yt-dlp for video extraction.
+### ZEE5
+Searches ZEE5 content via Mojeek (privacy search engine). Opens the selected movie/show in your browser (ZEE5 uses Widevine DRM, so in-terminal playback is not supported).
+
+### URL
+Direct URL passthrough for any yt-dlp-supported site (YouTube, ZEE5, MX Player, Einthusan, etc.).
 
 ## License
 
